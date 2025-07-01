@@ -25,7 +25,7 @@ router.post('/find',(req,res)=>{
 })
 
 router.get('/cart',(req,res)=>{
-    Cart.find().then(data=>{
+    Cart.find().populate('trip').then(data=>{
         if(data.length ===0){
             res.json({result:false,trip:'No trip in the cart'})
         }else{
@@ -62,7 +62,7 @@ router.post('/tocart', async (req,res)=>{
 
     
 
-    Cart.find().then(tripcart=>{
+    Cart.find().populate('trip').then(tripcart=>{
         if (!tripcart.some(e=> e.trip.equals(id))){
             const newCart = new Cart({
                 trip : id,
@@ -81,7 +81,7 @@ router.post('/tocart', async (req,res)=>{
 
 
 router.get('/book',(req,res)=>{
-    Booked.find().then(data=>{
+    Booked.find().populate('trip').then(data=>{
         if(data.length ===0){
             res.json({result:false,trip:'No trip booked'})
         }else{
