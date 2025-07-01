@@ -32,6 +32,7 @@ const makeTravelList = (list) => {
     if (list.length > 0) {
     trajetList = list
     list.map(trajet => trajet.date = new Date(trajet.date))
+    console.log(list)
     containerFound.innerHTML = ''
     
     containerFound.innerHTML = list.map(trajet => `<div class="travelList">
@@ -60,7 +61,6 @@ const searchTrips = async() => {
     )
     const data = await resp.json()
     if (data.result){
-    console.log(data.alltrips)
     makeTravelList(data.alltrips)
     } else {
         noTripFound()
