@@ -7,7 +7,12 @@ const containerFound = document.getElementById('containerFound')
 const imgTrajetFound = document.getElementById('imgTrajetFound')
 const txtFound = document.getElementById('txtFound')
 
+let toBook;
 
+let trajetList = []
+
+
+// fonctions basics
 const formatText = (txt) => {
    return txt[0].toUpperCase() + txt.slice(1).toLowerCase()
 }
@@ -21,8 +26,11 @@ const noTripFound = () => {
         txtFound.textContent = 'No trip found.'
 }
 
+
+// fonctions complexes
 const makeTravelList = (list) => {
     if (list.length > 0) {
+    trajetList = list
     list.map(trajet => trajet.date = new Date(trajet.date))
     containerFound.innerHTML = ''
     
@@ -33,10 +41,14 @@ const makeTravelList = (list) => {
             <span class="book">Book</span>
         </div>`
     ).join('')
+    toBook = document.querySelectorAll('.travelList')
+    toBook.forEach(( div, i) => div.addEventListener('click' , () => addToCard(list[i]._id) ) )
     } else {
         noTripFound()
     }
 }
+
+// fonctions routes
 
 const searchTrips = async() => {
     try {
@@ -59,8 +71,24 @@ const searchTrips = async() => {
 }
 
 
-const date = new Date('02-07-2025')
-console.log(date)
+const addToCard = async(index) => {
+    try {
+        const resp = await fetch('http://localhost:3000/trips/tocart',  {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ tripID : index }),
+        })
+        const data = await resp.json()
+        console.log(data)
+
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+
+
+
 
 
 
