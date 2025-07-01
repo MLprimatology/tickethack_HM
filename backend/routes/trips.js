@@ -18,7 +18,6 @@ router.post('/find',(req,res)=>{
     const date = new Date(req.body.date);
     const enddate = new Date(date.getTime() + 24 * 60 * 60 * 1000);
 
-    console.log(date)
     Trip.find({departure : departure, arrival:arrival, date:{$gte:date, $lte:enddate}}).then(
         data => {res.json({result:true, alltrips :data})})
 

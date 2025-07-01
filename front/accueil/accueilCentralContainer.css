@@ -113,3 +113,17 @@
     padding: 7.5px;
 
 }
+
+
+a{
+    text-decoration: none;
+
+}
+
+#txtTicketHack{
+    font-size: 26px;
+}
+
+#subContenairTopBar a{
+    color:black;
+}
