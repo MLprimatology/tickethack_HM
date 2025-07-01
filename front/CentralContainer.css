@@ -1,0 +1,95 @@
+#containerTrains {
+    background-color: rgba(136, 136, 136, 0);
+    display: flex;
+    grid-row-start: 4;
+    grid-row-end: 10;
+    grid-column-start: 3;
+    grid-column-end: 9;
+    padding: 5%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* base conteneur */
+
+.centralConainers{
+    background-color: rgb(255, 255, 255);
+    width: clamp(150px, 20vw, 250px);
+    height: clamp(300px, 30vh, 500px);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* conteneur de gauche */
+
+#containerSearch{
+
+
+}
+
+.inputSearch{
+    height: 8vh;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(216, 216, 216);
+}
+
+#searchByDeparture{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 0.2px solid black;
+
+
+
+
+}
+#searchByArrival{
+
+
+
+}
+#searchByDate{
+    margin-top: 5vh;
+    margin-bottom: 14vh;
+
+
+}
+#btnSearch{
+    text-align: center;
+    font-size: large;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+    background-color: rgb(89, 146, 89);
+    border-radius: 3px;
+    height: 8vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+
+
+/* conteneur de droite */
+
+#containerFound{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+#imgTrajetFound{
+    border-bottom: 2px solid rgb(5, 148, 0);
+    margin-bottom: 2vh;
+}
+
+#txtFound{
+
+}
