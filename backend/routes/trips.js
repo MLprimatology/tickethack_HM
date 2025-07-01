@@ -27,24 +27,30 @@ router.get('/find',(req,res)=>{
 
 
 router.post('/tocart', (req,res)=>{
-    const departure = req.body.departure;
-    const arrival = req.body.arrival;
-    const date = req.body.date;
-    const price = req.body.price;
+
+    const id = req.body.tripID;
+
     Cart.find().then(tripcart=>{
-        if (!tripcart.some(e=> e.departure.toLowerCase()===departure.toLowerCase() || e.arrival.toLowerCase()===arrival.toLowerCase() || e.date === new Date(date) )){
+        if (!tripcart.some(e=> e.trip===id)){
             const newCart = new Cart({
-                departure : departure,
-                arrival : arrival,
-                date : date,
-                price :price,
+                trip : id,
             })
-            newCart.save().then(res.json({result: true, trip:newCart}))
+            newCart.save().then(()=> Cart.find().populate('trip')).then(data=>console.log(data)).then(res.json({result: true, trip:'Trip added to cart'}))
         }
         else{
             res.json({ result: false, error: "Trip already in your cart" })
         }
     })
+
+
+
+
+
+
+
+
+
+
 
 
 })
@@ -53,20 +59,15 @@ router.post('/tocart', (req,res)=>{
 
 router.post('/tobook', (req,res)=>{
 
-    Cart.find().lean().then(data=>{
-        if(data != []){
-            const cleanedDocs = data.map(({ _id, ...data }) => data)
-            console.log(cleanedDocs)
-            Booked.insertMany(cleanedDocs).then(
-            res.json({ result: true, trip: "Empty Cart"}))
+    Cart.find().then(cartTip =>{
+        for (let trip of cartTip){
+            console.log(trip)
+            console.log('coucou')
         }
-
-        else{
-            res.json({ result: false, error: "No trips in your cart"})
-    }
+    
+    }).then(res.json({result:true}))
 
 
-        })
     
 
 
