@@ -26,8 +26,8 @@
 
 /* conteneur de gauche */
 
-#containerSearch{
-
+#title{
+    text-align: center;
 
 }
 
@@ -36,6 +36,7 @@
     border-radius: 2px;
     border: none;
     background-color: rgb(216, 216, 216);
+    padding-left: 10px;
 }
 
 #searchByDeparture{

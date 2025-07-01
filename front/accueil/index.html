@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../topBarAndBody.css">
     <link rel="stylesheet" href="accueilCentralContainer.css">
 </head>
+
 <body>
     <div class="mainContainer" id="containerAccueil">
         <div id="topBar">
@@ -16,29 +18,31 @@
                 <a class="btnOtherPage" href="../booking/booking.html">Booking</a>
             </div>
         </div>
-    
-    <div id="containerTrains">
-        <div id="containerSearch" class="centralConainers">
-            <input type="text" name="" id="searchByDeparture" class="inputSearch">
-            <input type="text" name="" id="searchByArrival" class="inputSearch">
-            <input type="date" name="" id="searchByDate" class="inputSearch">
-            <div id="btnSearch" >Search</div>
+        <div id="title">
+            <h1>
+                Explore the world effortlessly by train
+            </h1>
+            <h4>Compare, book and enjoy for train tickets: yoru journer starts on Tickethack</h4>
         </div>
+        <div id="containerTrains">
+            <div id="containerSearch" class="centralConainers">
+                <input type="text" name="" id="searchByDeparture" class="inputSearch" placeholder="Departure">
+                <input type="text" name="" id="searchByArrival" class="inputSearch" placeholder="Arrival">
+                <input type="date" name="" id="searchByDate" class="inputSearch">
+                <div id="btnSearch">Search</div>
+            </div>
 
-        <div id="containerFound" class="centralConainers">
-            <img src="../images/train.png" alt="" id="imgTrajetFound">
-            <p id="txtFound">it's time to book your future trip.</p>
-            
-
-
+            <div id="containerFound" class="centralConainers">
+                <img src="../images/train.png" alt="" id="imgTrajetFound">
+                <p id="txtFound">it's time to book your future trip.</p>
+            </div>
 
         </div>
-        
-    </div>
 
 
 
     </div>
 </body>
-    <script src="./index.js"></script>
+<script src="./index.js"></script>
+
 </html>
