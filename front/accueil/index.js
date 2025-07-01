@@ -9,24 +9,22 @@ const formatText = (txt) => {
    return txt[0].toUpperCase() + txt.slice(1).toLowerCase()
 }
 
-/*
-const makeTravelList = (list) => {
-    return list.map(trajet => {`
-        <div class="travelList">
-            <span>${trajet.}</span>
-            <span>ville2</span>
-            <span>heur</span>
-            <span>prix</span>
-            <span class="book">Book</span>
-
-        </div>
-        
-        
-        `
-    })
+const getFullHours = (date) => {
+    return date.getHours() + ':' + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes())
 }
 
-*/
+const makeTravelList = (list) => {
+    list.map(trajet => trajet.date = new Date(trajet.date))
+    containerFound.innerHTML = ''
+    
+    containerFound.innerHTML = list.map(trajet => `<div class="travelList">
+            <span>${trajet.arrival} > ${trajet.departure}</span>
+            <span>${getFullHours(trajet.date)}</span>
+            <span>${trajet.price}€</span>
+            <span class="book">Book</span>
+        </div>`
+    ).join('')
+}
 
 const searchTrips = async() => {
     const resp = await fetch('http://localhost:3000/trips/find', {
@@ -36,8 +34,8 @@ const searchTrips = async() => {
         }
     )
     const data = await resp.json()
-    console.log(data)
-
+    console.log(data.alltrips)
+    makeTravelList(data.alltrips)
     
 }
 
