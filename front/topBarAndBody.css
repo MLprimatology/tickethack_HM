@@ -5,14 +5,19 @@
 }
 
 body {
-    background-image: url('images/background.jpg');
     height: 100vh;
     width: 100vw;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: beige;
 }
 
-#container {
+#containerAccueil{
+    background-image: url('images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.mainContainer {
     display: grid;
     height: 100%;
     width: 100%;
