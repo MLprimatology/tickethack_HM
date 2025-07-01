@@ -37,6 +37,7 @@ router.post('/tocart', (req,res)=>{
             })
             newCart.save().then(res.json({result: true, trip:'Trip added to cart'}))
         }
+        
         else{
             res.json({ result: false, error: "Trip already in your cart" })
         }
@@ -65,7 +66,11 @@ router.post('/tobook', async (req,res)=>{
 
     }
 
-    res.json({result:true, trips : 'Trips tranfer from cart to booked'})}
+    Cart.deleteMany({}).then(()=>{
+        res.json({result:true, trips : 'Trips transfer from cart to booked'})
+    })
+
+    }
     else{
         res.json({result : false, error: error})
     }

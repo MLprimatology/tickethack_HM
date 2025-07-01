@@ -1,8 +1,8 @@
 function checkCartToBook(cartTip,BookedTrip){
         let result = true;
         let error = '';
-        console.log(BookedTrip)
-        if (cartTip == []){
+        console.log(cartTip)
+        if (cartTip.length ===0){
             result = false;
             error = 'No trip in the cart'
         }
