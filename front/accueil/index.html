@@ -7,6 +7,11 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="../topBarAndBody.css">
     <link rel="stylesheet" href="accueilCentralContainer.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+
+
 </head>
 
 <body>
@@ -18,25 +23,30 @@
                 <a class="btnOtherPage" href="../booking/booking.html">Booking</a>
             </div>
         </div>
-        <div id="title">
-            <h1>
-                Explore the world effortlessly by train
-            </h1>
-            <h4>Compare, book and enjoy for train tickets: your journey starts on Tickethack</h4>
-        </div>
+
         <div id="containerTrains">
-            <div id="containerSearch" class="centralConainers">
-                <input type="text" name="" id="searchByDeparture" class="inputSearch" placeholder="Departure">
-                <input type="text" name="" id="searchByArrival" class="inputSearch" placeholder="Arrival">
-                <input type="date" name="" id="searchByDate" class="inputSearch">
-                <div id="btnSearch">Search</div>
+            <div id="title">
+                <h1>
+                    Explore the world effortlessly by train
+                </h1>
+                <h4>Compare, book and enjoy for train tickets: your journey starts on Tickethack</h4>
             </div>
+            <div id="littlecontainers">
+                <div id="containerSearch" class="centralConainers">
+                    <input type="text" name="" id="searchByDeparture" class="inputSearch" placeholder="Departure">
+                    <input type="text" name="" id="searchByArrival" class="inputSearch" placeholder="Arrival">
+                    <input type="date" name="" id="searchByDate" class="inputSearch">
+                    <div id="btnSearch">Search</div>
+                </div>
 
-            <div id="containerFound" class="centralConainers">
-                <img src="../images/train.png" alt="" id="imgTrajetFound">
-                <p id="txtFound">it's time to book your future trip.</p>
+                <div id="containerFound" class="centralConainers">
+                    <img src="../images/train.png" alt="" id="imgTrajetFound">
+                    <div id="txtFound">
+                        <p>it's time to book your future trip.</p>
+                    </div>
+
+                </div>
             </div>
-
         </div>
 
     </div>
