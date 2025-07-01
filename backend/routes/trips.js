@@ -37,6 +37,16 @@ router.get('/cart',(req,res)=>{
 
 
 
+router.delete('/cart',(req,res)=>{
+
+    const id = req.body.tripID;
+    Cart.deleteOne({_id:id}).then(res.json({result:true,trip:'trip deleted'}))
+
+    
+})
+
+
+
 
 
 router.post('/tocart', async (req,res)=>{
