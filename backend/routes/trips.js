@@ -11,7 +11,7 @@ const {checkCartToBook} = require('../modules/checkCartToBook')
 
 
 
-router.post('/find',(req,res)=>{
+router.get('/find',(req,res)=>{
     const departure = req.body.departure;
     const arrival = req.body.arrival;
 
