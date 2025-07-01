@@ -11,27 +11,36 @@ const {checkCartToBook} = require('../modules/checkCartToBook')
 
 
 
-router.get('/find',(req,res)=>{
+router.post('/find',(req,res)=>{
     const departure = req.body.departure;
     const arrival = req.body.arrival;
 
-    // const date = req.body.date;
-    const date = new Date('2025-07-01').toISOString()
-    const endate = new Date('2025-07-02').toISOString()
+    const date = new Date(req.body.date);
+    const enddate = new Date(date.getTime() + 24 * 60 * 60 * 1000);
+
     console.log(date)
-    Trip.find({departure : departure, arrival:arrival, date:{$gte:date, $lte:endate}}).then(
+    Trip.find({departure : departure, arrival:arrival, date:{$gte:date, $lte:enddate}}).then(
         data => {res.json({result:true, alltrips :data})})
 
 
 })
 
 
-router.post('/tocart', (req,res)=>{
+router.post('/tocart', async (req,res)=>{
 
     const id = req.body.tripID;
+    
+    const BookedTrip = await Booked.find();
+
+    if (BookedTrip.some(e=> e.trip.equals(id))){
+        res.json({ result: false, error: "Trip already Booked" })
+    }
+    else{
+
+    
 
     Cart.find().then(tripcart=>{
-        if (!tripcart.some(e=> e.trip===id)){
+        if (!tripcart.some(e=> e.trip.equals(id))){
             const newCart = new Cart({
                 trip : id,
             })
@@ -41,7 +50,7 @@ router.post('/tocart', (req,res)=>{
         else{
             res.json({ result: false, error: "Trip already in your cart" })
         }
-    })
+    })}
 
 
 })
