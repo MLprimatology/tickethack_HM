@@ -8,7 +8,7 @@ function checkCartToBook(cartTip,BookedTrip){
         }
         else{
             for (let trip of cartTip){
-                if (BookedTrip.some(e => e.trip == trip.trip)){
+                if (BookedTrip.some(e => e.trip.equals(trip.trip) )){
                     result = false;
                     error = 'One fo the trips is already booked'
                 }
