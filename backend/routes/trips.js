@@ -24,6 +24,20 @@ router.post('/find',(req,res)=>{
 
 })
 
+router.get('/cart',(req,res)=>{
+    Cart.find().then(data=>{
+        if(data.length ===0){
+            res.json({result:false,trip:'No trip in the cart'})
+        }else{
+            res.json({result:true,trip:data})
+        }
+    })
+})
+
+
+
+
+
 
 router.post('/tocart', async (req,res)=>{
 
@@ -53,6 +67,20 @@ router.post('/tocart', async (req,res)=>{
 
 
 })
+
+
+
+router.get('/book',(req,res)=>{
+    Booked.find().then(data=>{
+        if(data.length ===0){
+            res.json({result:false,trip:'No trip booked'})
+        }else{
+            res.json({result:true,trip:data})
+        }
+    })
+})
+
+
 
 
 
@@ -86,7 +114,7 @@ router.post('/tobook', async (req,res)=>{
     })
 
 
-    
+
 
 
 
