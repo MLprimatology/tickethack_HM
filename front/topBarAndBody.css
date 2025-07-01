@@ -44,10 +44,13 @@ body {
     font-size: larger;
 }
 
+
+
+/*
 #subContenairTopBar{
     width: clamp(110px, 6vw, 300px);
     padding-right: 1vw;
     display: flex;
     justify-content: space-between;
     font-size: large;
-}
+}*/

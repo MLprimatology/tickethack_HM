@@ -1,5 +1,4 @@
 *{
-
     font-family : 'Noto Sans'
 }
 
@@ -140,6 +139,10 @@
 }
 
 
+
+
+/* Add htis part to global title bar */
+
 a{
     text-decoration: none;
 
@@ -154,6 +157,24 @@ a{
 #subContenairTopBar a{
     color:black;
 }
+
+
+#subContenairTopBar{
+    padding-right: 1vw;
+    justify-content: space-around;
+    font-size: large;
+}
+
+
+.btnOtherPage{ 
+    margin-left: 30px;
+    margin-right: 20px;
+}
+
+
+/* jusque la */
+
+
 
 #title{
     color: white;
