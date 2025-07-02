@@ -19,7 +19,7 @@ const creatList = () => {
     let totalAmount = trip.reduce((acc, b) =>  acc + b.price, 0)
     console.log(list)
     if (list.length > 0) {
-    centralContainer.innerHTML = `<p>My cart</p>`
+    centralContainer.innerHTML = `<p id="mycart">My cart</p>`
     centralContainer.innerHTML += trip.map(trajet => `
                 <div class="travelTopaid">
                 <span>${trajet.departure} > ${trajet.arrival}</span>

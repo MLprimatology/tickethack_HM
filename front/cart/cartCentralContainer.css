@@ -10,7 +10,6 @@
 
 #centralContainer{
     grid-row-start: 5;
-    grid-row-end: 7;
     grid-column-start: 3;
     grid-column-end: 9;
     display: flex;
@@ -18,24 +17,43 @@
     justify-content: space-around;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    
+    
+    
+}
+
+
+
+#centralContainer p {
+margin-top: 50px;
+margin-bottom: 30px;
+
+}
+#mycart{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
 .travelTopaid{
-    background-color: rgba(158, 161, 152, 0.438);
-    width: 100%;
+    background-color: #f5eeee;
+    width: 80%;
     height: 50px;
     border-radius: 5px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 10px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 
 }
 
+
+
 .supprimer {
     background-color: #4FAB91;
-    border-radius: 10px;
+    border-radius: 5px;
     height: 30px;
     width: 30px;
     display: flex;
@@ -56,12 +74,12 @@ cursor: pointer;
     justify-content: space-between;
     color: wheat;
     width: 100%;
-    height: 50px;
+    height: 70px;
     border-radius: 0 0 10px 10px;
-    margin-top: 20px;
 }
 #total{
-    margin: 10px;
+    margin-left: 40px;
+    padding-left: 20px;
     color: aliceblue;
 
 }
@@ -69,11 +87,11 @@ cursor: pointer;
     background-color: #4FAB91;
     width: 100px;
     border-radius: 5px;
-    margin: 10px;
+    margin-right: 50px;
     padding: 5px;
     color: white;
     font-size: 15px;
-
+    
     text-align: center;
 
 }
