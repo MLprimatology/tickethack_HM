@@ -46,6 +46,8 @@ const getBooks = async () => {
     const data = await resp.json()
     console.log(data.trip)
     let trips = data.trip.map(trip => trip = trip.trip)
+
+
     if (trips.length > 0)   {
     centralContainer.innerHTML = `<p id="mybookings">My bookings</p>`
     centralContainer.innerHTML += trips.map(trajet => `

@@ -81,7 +81,12 @@ const addToCard = async(index) => {
         })
         const data = await resp.json()
         console.log(data)
+        if (data.result) {
         window.location.href = ('../cart/cart.html')
+        } else {
+            alert(data.error)
+        }
+
 
     } catch(err) {
         console.log(err)
