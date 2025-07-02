@@ -29,7 +29,12 @@ router.get('/cart',(req,res)=>{
         if(data.length ===0){
             res.json({result:false,trip:'No trip in the cart'})
         }else{
-            res.json({result:true,trip:data})
+                        if (data.length>1){
+            data.sort((a, b) => new Date(a.trip.date) - new Date(b.trip.date))
+            res.json({result:true,trip:data})}
+            else{
+                res.json({result:true,trip:data})
+            }
         }
     })
 })
@@ -85,7 +90,13 @@ router.get('/book',(req,res)=>{
         if(data.length ===0){
             res.json({result:false,trip:'No trip booked'})
         }else{
-            res.json({result:true,trip:data})
+            if (data.length>1){
+            data.sort((a, b) => new Date(a.trip.date) - new Date(b.trip.date))
+            res.json({result:true,trip:data})}
+            else{
+                res.json({result:true,trip:data})
+            }
+            
         }
     })
 })
