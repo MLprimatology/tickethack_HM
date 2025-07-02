@@ -108,7 +108,7 @@
 }
 
 #imgTrajetFound{
-    border-bottom: 2px solid rgb(21, 133, 123);
+    border-bottom: 2px solid #4FAB91;
     padding-bottom: 50px;
     margin-bottom: 2vh;
     width: 60% ;
@@ -126,53 +126,28 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
 }
 
 .book{
-    background-color: rgb(21, 133, 123);
+    background-color:  #4FAB91;
     width: 50;
-    border-radius: 3px;
+    border-radius: 6px;
     padding: 5px;
     margin: 5px;
-
+    color: white;
 }
 
 
-
-
-/* Add htis part to global title bar */
-
-a{
-    text-decoration: none;
-
-}
-
-#txtTicketHack{
-    font-size: 26px;
-    color: #4FAB91;
-    font-weight: 600;
-}
-
-#subContenairTopBar a{
-    color:black;
+.book:hover{
+     cursor: pointer;
 }
 
 
-#subContenairTopBar{
-    padding-right: 1vw;
-    justify-content: space-around;
-    font-size: large;
+.book{
+
 }
-
-
-.btnOtherPage{ 
-    margin-left: 30px;
-    margin-right: 20px;
-}
-
-
-/* jusque la */
 
 
 
