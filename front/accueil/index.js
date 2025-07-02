@@ -13,9 +13,6 @@ let toBook;
 let trajetList = [];
 
 // fonctions basics
-const formatText = (txt) => {
-  return txt[0].toUpperCase() + txt.slice(1).toLowerCase();
-};
 
 const getFullHours = (date) => {
   return (
@@ -65,8 +62,8 @@ const searchTrips = async () => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        departure: formatText(searchByDeparture.value),
-        arrival: formatText(searchByArrival.value),
+        departure: searchByDeparture.value,
+        arrival: searchByArrival.value,
         date: new Date(searchByDate.value).setHours(0),
       }),
     });

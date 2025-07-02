@@ -6,6 +6,7 @@ const Cart = require('../models/carts')
 const Booked = require('../models/bookeds')
 
 const {checkCartToBook} = require('../modules/checkCartToBook')
+const{checkBody} = require('../modules/checkBody')
 
 
 
@@ -20,7 +21,17 @@ router.post('/find',async (req,res)=>{
     const BookedTrip = await Booked.find();
     const CartTrip = await Cart.find();
 
-    Trip.find({departure : departure, arrival:arrival, date:{$gte:date, $lte:enddate}}).then(
+    if(!checkBody({ ...req.body},['departure','arrival','date'])){
+        res.json({
+            result:   false, 
+            error: 'Missing or empty fields'
+        })
+    }
+    else{
+
+    
+
+    Trip.find({departure : { $regex: new RegExp(departure, 'i') }, arrival:{ $regex: new RegExp(arrival, 'i') }, date:{$gte:date, $lte:enddate}}).then(
         data =>{
             for (let tripTobook of data){
 
@@ -40,6 +51,7 @@ router.post('/find',async (req,res)=>{
 
             
             res.json({result:true, alltrips :data,available:available })})
+}
 
 
 })
