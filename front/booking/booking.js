@@ -44,7 +44,7 @@ const getBooks = async () => {
     console.log(data.trip)
     let trips = data.trip.map(trip => trip = trip.trip)
     if (trips.length > 0)   {
-    centralContainer.innerHTML = 'My Bookings'
+    centralContainer.innerHTML = `<p id="mybookings">My bookings</p>`
     centralContainer.innerHTML += trips.map(trajet => `
                 <div class="travels">
                 <span>${trajet.departure} > ${trajet.arrival}</span>
@@ -53,7 +53,10 @@ const getBooks = async () => {
                 <span>departure in : ${timeBerfor(trajet.date)}</span>
             </div>
                 `).join('')
-
+    centralContainer.innerHTML += `
+            <div id="trait"> </div>
+            <p id="enjoy">Enjoy your travel with tickets hacks</p>
+            `
         }
     } catch(err) {
         console.log(err)

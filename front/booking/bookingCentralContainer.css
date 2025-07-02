@@ -1,6 +1,5 @@
 #centralContainer{
     grid-row-start: 5;
-    grid-row-end: 7;
     grid-column-start: 3;
     grid-column-end: 9;
     display: flex;
@@ -8,14 +7,46 @@
     justify-content: space-around;
     align-items: center;
     background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+#containerCart{
+        background-color: #e9ecef;
+
 }
 
 .travels {
-    background-color: rgb(197, 197, 196);
+    background-color: #f5eeee;
     height: 40px;
     width: 400px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 10px;
+    width: 80%;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#mybookings{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#trait{
+    border-bottom: solid 1px black;
+    width: 30%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#enjoy{
+color: #4FAB91;
+margin-bottom: 20px;
+
+}
+
+.nobooking{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
