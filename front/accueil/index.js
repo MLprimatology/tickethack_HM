@@ -91,7 +91,7 @@ const addToCard = async(index) => {
 
 
 
-
+document.getElementById('searchByDate').valueAsDate = new Date()
 
 
 btnSearch.addEventListener('click', searchTrips)
