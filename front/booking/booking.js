@@ -58,10 +58,10 @@ const getBooks = async () => {
     centralContainer.innerHTML = `<p id="mybookings">My bookings</p>`
     centralContainer.innerHTML += trips.map(trajet => `
                 <div class="travels">
-                <span>${trajet.departure} > ${trajet.arrival}</span>
-                <span>${getFullHours(trajet.date)}</span>
-                <span>${trajet.price}€</span>
-                <span>${timeBerfor(trajet.date)}</span>
+                <span class="txtBooking">${trajet.departure} > ${trajet.arrival}</span>
+                <span class="txtBooking">${getFullHours(trajet.date)}</span>
+                <span class="txtBooking">${trajet.price}€</span>
+                <span class="txtBooking">${timeBerfor(trajet.date)}</span>
             </div>
                 `).join('')
     centralContainer.innerHTML += `
