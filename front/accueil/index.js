@@ -80,6 +80,7 @@ const addToCard = async(index) => {
         })
         const data = await resp.json()
         console.log(data)
+        window.location.href = ('../cart/cart.html')
 
     } catch(err) {
         console.log(err)

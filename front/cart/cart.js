@@ -18,6 +18,7 @@ const creatList = () => {
     const trip = list.map(item => {return item.trip})
     let totalAmount = trip.reduce((acc, b) =>  acc + b.price, 0)
     console.log(list)
+    if (list.length > 0) {
     centralContainer.innerHTML = `<p>My cart</p>`
     centralContainer.innerHTML += trip.map(trajet => `
                 <div class="travelTopaid">
@@ -38,7 +39,12 @@ const creatList = () => {
     total = document.getElementById('total')
     purchase = document.getElementById('purchase')
     purchase.addEventListener('click', buy)
-
+} else {
+    centralContainer.innerHTML = `
+            <p>No ticket in your cart.</p>
+            <p>Why not plan a trip?</p>
+    `
+}
 
 }
 
@@ -56,8 +62,15 @@ const getCartList = async(id) => {
     const data = await resp.json()
      console.log(data)
      list = data.trip
+     if (data.result)   {
+        
      creatList()
-
+        } else {
+        centralContainer.innerHTML = `
+            <p>No ticket in your cart.</p>
+            <p>Why not plan a trip?</p>
+         `
+     }
 } catch(err) {
     console.log(err)
 }
