@@ -18,7 +18,7 @@ router.post('/find',async (req,res)=>{
     const date = new Date(req.body.date);
     const enddate = new Date(date.getTime() + 24 * 60 * 60 * 1000);
     const BookedTrip = await Booked.find();
-    const CartTrip = await CartTrip.find();
+    const CartTrip = await Trip.find();
 
     Trip.find({departure : departure, arrival:arrival, date:{$gte:date, $lte:enddate}}).then(
         data =>{
