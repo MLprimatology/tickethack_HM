@@ -6,6 +6,7 @@ const btnSearch = document.getElementById('btnSearch')
 const containerFound = document.getElementById('containerFound')
 const imgTrajetFound = document.getElementById('imgTrajetFound')
 const txtFound = document.getElementById('txtFound')
+const url = "http://localhost:3000"
 
 let toBook;
 
@@ -53,7 +54,7 @@ const makeTravelList = (list) => {
 
 const searchTrips = async() => {
     try {
-    const resp = await fetch('http://localhost:3000/trips/find', {
+    const resp = await fetch(`${url}/trips/find`, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ departure : formatText(searchByDeparture.value) , arrival : formatText(searchByArrival.value), date : new Date(searchByDate.value).setHours(0) }),
@@ -73,7 +74,7 @@ const searchTrips = async() => {
 
 const addToCard = async(index) => {
     try {
-        const resp = await fetch('http://localhost:3000/trips/tocart',  {
+        const resp = await fetch(`${url}/trips/tocart`,  {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ tripID : index }),

@@ -1,4 +1,5 @@
 const centralContainer = document.getElementById('centralContainer')
+const url = "http://localhost:3000"
 let total;
 let purchase;
 let list
@@ -54,7 +55,7 @@ const creatList = () => {
 // recuperer la liste des trajet en attente de paiement
 const getCartList = async(id) => {
     try{
-    const resp = await fetch('http://localhost:3000/trips/cart', {
+    const resp = await fetch(`${url}/trips/cart`, {
 		method: 'GET',
 		headers: { 'Content-Type': 'application/json' },
         }
@@ -79,7 +80,7 @@ const getCartList = async(id) => {
 // supprimer un trajet en attente de paiement
 const supressToCard = async(id) => {
     try {
-    const resp = await fetch('http://localhost:3000/trips/deletecart', {
+    const resp = await fetch(`${url}/trips/deletecart`, {
         method: 'DELETE',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({tripID : id})
@@ -96,7 +97,7 @@ const supressToCard = async(id) => {
 // payer
 const buy = async() => {
     try {
-        const resp = await fetch('http://localhost:3000/trips/tobook', {
+        const resp = await fetch(`${url}/trips/tobook`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
         })
