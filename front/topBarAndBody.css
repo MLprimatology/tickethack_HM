@@ -1,8 +1,9 @@
 *{
-    margin: 0;
-    padding: 0;
-    user-select: none;
+    font-family : 'Noto Sans';
+    margin: 0px;
+    padding: 0px;
 }
+
 
 body {
     height: 100vh;
@@ -38,10 +39,32 @@ body {
     grid-column-end: 12;
 }
 
+a{
+    text-decoration: none;
+
+}
+
 #txtTicketHack{
-    color: rgb(0, 112, 6);
-    font-weight: 900;
-    font-size: larger;
+    font-size: 26px;
+    color: #4FAB91;
+    font-weight: 600;
+}
+
+#subContenairTopBar a{
+    color:black;
+}
+
+
+#subContenairTopBar{
+    padding-right: 1vw;
+    justify-content: space-around;
+    font-size: large;
+}
+
+
+.btnOtherPage{ 
+    margin-left: 30px;
+    margin-right: 20px;
 }
 
 
