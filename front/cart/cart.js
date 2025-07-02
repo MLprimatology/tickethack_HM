@@ -31,7 +31,7 @@ const creatList = () => {
         centralContainer.innerHTML += `
             <div id="totalBuy">
                 <div id="total">Total : ${totalAmount}€</div>
-                <div id="purchase">purchase</div>
+                <div id="purchase">Purchase</div>
             </div>
         `
     let btnSurppimer = document.querySelectorAll('.supprimer')
@@ -41,7 +41,7 @@ const creatList = () => {
     purchase.addEventListener('click', buy)
 } else {
     centralContainer.innerHTML = `
-            <p>No ticket in your cart.</p>
+            <p>No tickets in your cart.</p>
             <p>Why not plan a trip?</p>
     `
 }
@@ -67,7 +67,7 @@ const getCartList = async(id) => {
      creatList()
         } else {
         centralContainer.innerHTML = `
-            <p>No ticket in your cart.</p>
+            <p>No tickets in your cart.</p>
             <p>Why not plan a trip?</p>
          `
      }
