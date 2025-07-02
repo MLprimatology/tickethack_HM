@@ -4,10 +4,17 @@ let total;
 let purchase;
 let list
 
+
+const months = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+
 // fonction basiques
 const getFullHours = (date) => {
     const newDate = new Date(date)
-    return newDate.getHours() + ':' + (newDate.getMinutes() < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes())
+    return newDate.getDate() + ' ' + months[newDate.getMonth()] + ' at ' + newDate.getHours() + ':' + (newDate.getMinutes() < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes())
 }
 
 
@@ -32,7 +39,7 @@ const creatList = () => {
         centralContainer.innerHTML += `
             <div id="totalBuy">
                 <div id="total">Total : ${totalAmount}€</div>
-                <div id="purchase">Purchase</div>
+                <div id="purchase" >Purchase</div>
             </div>
         `
     let btnSurppimer = document.querySelectorAll('.supprimer')
