@@ -103,6 +103,7 @@ const buy = async() => {
         })
         const data = await resp.json()
         console.log(data)
+        window.location.href = ("../booking/booking.html")
 
 
 

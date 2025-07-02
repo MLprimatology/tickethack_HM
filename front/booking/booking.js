@@ -9,6 +9,7 @@ const getFullHours = (date) => {
 const convertisseur = (difference) => {
     let diff = difference
 
+    if (diff > 0) {
     let month = Math.floor(diff / (1000 * 60 * 60 * 24 * 30))
     diff -= (month * (1000 * 60 * 60 * 24 * 30))
     let day = Math.floor(diff / (1000 * 60 * 60 * 24))
@@ -18,9 +19,16 @@ const convertisseur = (difference) => {
     let minutes = Math.floor(diff / (1000 * 60))
     diff -= (minutes * (1000 * 60))
      
-    let string = `${month === 0 ? '' : (month) + ' month,'} ${day === 0 ? '' : day + ' days'} ${hours === 0 ? '' : (hours) + ' hours'} ${minutes + ' minutes'}`
+    let string = `departure in : ${month === 0 ? 
+                        day === 0 ? 
+                    hours === 0 ? minutes + 'minutes'  : hours + 'hours'
+                        : day + 'day'
+                            : (month) + ' month'}`
 
     return string
+    } else {
+        return 'date already past'
+    }
 } 
 
 const timeBerfor = (date) => {
@@ -29,12 +37,7 @@ const timeBerfor = (date) => {
     let diff = newDate - today
     const delay = convertisseur(diff)
 
-    
-    console.log(delay)
-
-   
-
-    
+    return delay
 }
 
 const getBooks = async () => {
@@ -50,7 +53,7 @@ const getBooks = async () => {
                 <span>${trajet.departure} > ${trajet.arrival}</span>
                 <span>${getFullHours(trajet.date)}</span>
                 <span>${trajet.price}€</span>
-                <span>departure in : ${timeBerfor(trajet.date)}</span>
+                <span>${timeBerfor(trajet.date)}</span>
             </div>
                 `).join('')
     centralContainer.innerHTML += `
