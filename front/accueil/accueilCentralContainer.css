@@ -27,8 +27,8 @@
 
 .centralConainers{
     background-color: rgb(255, 255, 255);
-    width: clamp(200px, 25vw, 400px);
-    height: clamp(300px, 35vh, 600px);
+    width: clamp(100px, 25vw, 400px);
+    height: clamp(350px, 40vh, 700px);
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -46,6 +46,7 @@
 
 .inputSearch{
     height: 8vh;
+    width: 95%;
     border-radius: 2px;
     border: none;
     background-color: rgb(216, 216, 216);
@@ -57,17 +58,15 @@
     margin-bottom: 5px;
     border-bottom: 0.2px solid black;
 
-
-
-
 }
 
 #searchByDate{
     margin-top: 5vh;
     margin-bottom: 14vh;
 
-
 }
+
+
 #btnSearch{
     text-align: center;
     font-size: 12px;
@@ -116,27 +115,30 @@
 
 .travelList{
     background-color: rgba(158, 161, 152, 0.438);
-    width: 100%;
-    height: 50px;
+    width: 95%;
+    padding-bottom: 10px;
+    padding-top: 10px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 15px;
-    font-size: 0.75vmin;
+    font-size: 1vmin;
 }
 
 .book{
     background-color:  #4FAB91;
     width: 4vmin;
-    border-radius: 6px;
-    padding: 5px;
-    margin: 5px;
+    border-radius: 5px;
+    padding: 0.75vmin;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.75vmin;
+    font-size: 1vmin;
+}
+.txtTravelList{
+        font-size: 1vmin;
 }
 
 

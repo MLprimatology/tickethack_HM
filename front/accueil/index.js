@@ -41,9 +41,9 @@ const makeTravelList = (list, available) => {
     containerFound.innerHTML = list
       .map(
         (trajet, i) => `<div class="travelList">
-            <span>${trajet.departure} > ${trajet.arrival}</span>
-            <span>${getFullHours(trajet.date)}</span>
-            <span>${trajet.price}€</span>
+            <span class="txtTravelList">${trajet.departure} > ${trajet.arrival}</span>
+            <span class="txtTravelList">${getFullHours(trajet.date)}</span>
+            <span class="txtTravelList">${trajet.price}€</span>
             <span class="book" ${available[i] === 'available' ? '' : `style="background-color: red"`}>${ available[i] === 'available' ? 'Book' : available[i] === 'book' ? "booked" : "in cart" }</span>
         </div>`
       )
