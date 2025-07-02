@@ -44,7 +44,7 @@ const makeTravelList = (list, available) => {
             <span>${trajet.departure} > ${trajet.arrival}</span>
             <span>${getFullHours(trajet.date)}</span>
             <span>${trajet.price}€</span>
-            <span class="book" ${available[i] === 'available' ? '' : `style="background-color: red"`}>${ available[i] === 'available' ? 'Book' : available[i] === 'book' ? "already booked" : "already in cart" }</span>
+            <span class="book" ${available[i] === 'available' ? '' : `style="background-color: red"`}>${ available[i] === 'available' ? 'Book' : available[i] === 'book' ? "booked" : "in cart" }</span>
         </div>`
       )
       .join("");

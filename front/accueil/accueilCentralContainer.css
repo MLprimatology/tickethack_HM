@@ -27,8 +27,8 @@
 
 .centralConainers{
     background-color: rgb(255, 255, 255);
-    width: clamp(150px, 20vw, 250px);
-    height: clamp(300px, 30vh, 500px);
+    width: clamp(200px, 25vw, 400px);
+    height: clamp(300px, 35vh, 600px);
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -61,11 +61,7 @@
 
 
 }
-#searchByArrival{
 
-
-
-}
 #searchByDate{
     margin-top: 5vh;
     margin-bottom: 14vh;
@@ -127,28 +123,26 @@
     align-items: center;
     justify-content: space-around;
     margin-bottom: 15px;
-    font-size: 12px;
+    font-size: 0.75vmin;
 }
 
 .book{
     background-color:  #4FAB91;
-    width: 50;
+    width: 4vmin;
     border-radius: 6px;
     padding: 5px;
     margin: 5px;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75vmin;
 }
 
 
 .book:hover{
      cursor: pointer;
 }
-
-
-.book{
-
-}
-
 
 
 #title{
