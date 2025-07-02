@@ -11,15 +11,34 @@ const {checkCartToBook} = require('../modules/checkCartToBook')
 
 
 
-router.post('/find',(req,res)=>{
+router.post('/find',async (req,res)=>{
     const departure = req.body.departure;
     const arrival = req.body.arrival;
-
+    const available = [];
     const date = new Date(req.body.date);
     const enddate = new Date(date.getTime() + 24 * 60 * 60 * 1000);
+    const BookedTrip = await Booked.find();
+    const CartTrip = await CartTrip.find();
 
     Trip.find({departure : departure, arrival:arrival, date:{$gte:date, $lte:enddate}}).then(
-        data => {res.json({result:true, alltrips :data})})
+        data =>{
+            for (let tripTobook of data){
+                if (BookedTrip.some(e=> e.trip.equals(tripTobook.id))){
+                    available.push('book')
+                }
+                else if(CartTrip.some(e=> e.trip.equals(tripTobook.id))){
+                    available.push('cart')
+
+                }
+                else(
+                    available.push('available')
+                )
+            }
+            
+
+
+            
+            res.json({result:true, alltrips :data,available:available })})
 
 
 })
@@ -29,7 +48,7 @@ router.get('/cart',(req,res)=>{
         if(data.length ===0){
             res.json({result:false,trip:'No trip in the cart'})
         }else{
-                        if (data.length>1){
+                if (data.length>1){
             data.sort((a, b) => new Date(a.trip.date) - new Date(b.trip.date))
             res.json({result:true,trip:data})}
             else{
